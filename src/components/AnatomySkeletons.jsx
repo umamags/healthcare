@@ -1,6 +1,64 @@
 export default function AnatomySkeletons({ onHeartClick, onKidneyClick }) {
   return (
     <section className="bg-gradient-to-b from-white to-gray-50 py-12 mb-16">
+      <style>{`
+        @keyframes nodHead {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-8px); }
+        }
+
+        @keyframes swingArms {
+          0%, 100% { transform: rotate(0deg); }
+          25% { transform: rotate(-15deg); }
+          75% { transform: rotate(15deg); }
+        }
+
+        @keyframes marchLegs {
+          0%, 100% { transform: translateY(0px); }
+          25% { transform: translateY(-6px); }
+          50% { transform: translateY(0px); }
+          75% { transform: translateY(-6px); }
+        }
+
+        .animate-head {
+          animation: nodHead 1s ease-in-out infinite;
+          transform-origin: center center;
+        }
+
+        .animate-arm-left {
+          animation: swingArms 1s ease-in-out infinite;
+          transform-origin: 58px 102px;
+        }
+
+        .animate-arm-right {
+          animation: swingArms 1s ease-in-out infinite reverse;
+          transform-origin: 122px 102px;
+        }
+
+        .animate-leg-left {
+          animation: marchLegs 1s ease-in-out infinite;
+          transform-origin: 75px 265px;
+        }
+
+        .animate-leg-right {
+          animation: marchLegs 1s ease-in-out infinite reverse;
+          transform-origin: 105px 265px;
+        }
+
+        .skeleton-container:hover .animate-head {
+          animation: nodHead 0.8s ease-in-out infinite;
+        }
+
+        .skeleton-container:hover .animate-arm-left,
+        .skeleton-container:hover .animate-arm-right {
+          animation: swingArms 0.8s ease-in-out infinite;
+        }
+
+        .skeleton-container:hover .animate-leg-left,
+        .skeleton-container:hover .animate-leg-right {
+          animation: marchLegs 0.8s ease-in-out infinite;
+        }
+      `}</style>
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-gray-900 mb-2">
           Human Anatomy Overview
@@ -46,28 +104,30 @@ export default function AnatomySkeletons({ onHeartClick, onKidneyClick }) {
 
 function MaleSkeleton({ onHeartClick, onKidneyClick }) {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center skeleton-container">
       <h3 className="text-xl font-bold text-gray-900 mb-6">Male</h3>
       <svg
         viewBox="0 0 180 500"
         className="w-full max-w-xs"
         style={{ maxWidth: '280px' }}
       >
-        {/* Head - More realistic oval shape */}
-        <ellipse cx="90" cy="40" rx="24" ry="28" fill="#f5deb3" stroke="#8b7355" strokeWidth="2" />
+        {/* Head - More realistic oval shape - ANIMATED */}
+        <g className="animate-head">
+          <ellipse cx="90" cy="40" rx="24" ry="28" fill="#f5deb3" stroke="#8b7355" strokeWidth="2" />
 
-        {/* Facial features - Eyes */}
-        <circle cx="82" cy="36" r="2" fill="#333" />
-        <circle cx="98" cy="36" r="2" fill="#333" />
+          {/* Facial features - Eyes */}
+          <circle cx="82" cy="36" r="2" fill="#333" />
+          <circle cx="98" cy="36" r="2" fill="#333" />
 
-        {/* Nose */}
-        <line x1="90" y1="36" x2="90" y2="42" stroke="#8b7355" strokeWidth="1" />
+          {/* Nose */}
+          <line x1="90" y1="36" x2="90" y2="42" stroke="#8b7355" strokeWidth="1" />
 
-        {/* Mouth */}
-        <path d="M 82 46 Q 90 48 98 46" stroke="#8b7355" strokeWidth="1" fill="none" />
+          {/* Mouth */}
+          <path d="M 82 46 Q 90 48 98 46" stroke="#8b7355" strokeWidth="1" fill="none" />
 
-        {/* Neck - Tapered */}
-        <path d="M 86 68 L 86 82 L 94 82 L 94 68 Z" fill="#f5deb3" stroke="#8b7355" strokeWidth="1.5" />
+          {/* Neck - Tapered */}
+          <path d="M 86 68 L 86 82 L 94 82 L 94 68 Z" fill="#f5deb3" stroke="#8b7355" strokeWidth="1.5" />
+        </g>
 
         {/* Shoulders - Broad and natural */}
         <path
@@ -85,25 +145,29 @@ function MaleSkeleton({ onHeartClick, onKidneyClick }) {
           strokeWidth="2"
         />
 
-        {/* Left Arm - Curved */}
-        <path
-          d="M 58 102 Q 40 125 35 170 Q 33 210 32 250"
-          fill="none"
-          stroke="#d4a574"
-          strokeWidth="9"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        {/* Left Arm - Curved - ANIMATED */}
+        <g className="animate-arm-left">
+          <path
+            d="M 58 102 Q 40 125 35 170 Q 33 210 32 250"
+            fill="none"
+            stroke="#d4a574"
+            strokeWidth="9"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </g>
 
-        {/* Right Arm - Curved */}
-        <path
-          d="M 122 102 Q 140 125 145 170 Q 147 210 148 250"
-          fill="none"
-          stroke="#d4a574"
-          strokeWidth="9"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        {/* Right Arm - Curved - ANIMATED */}
+        <g className="animate-arm-right">
+          <path
+            d="M 122 102 Q 140 125 145 170 Q 147 210 148 250"
+            fill="none"
+            stroke="#d4a574"
+            strokeWidth="9"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </g>
 
         {/* Abdomen - Lower torso */}
         <path
@@ -199,25 +263,29 @@ function MaleSkeleton({ onHeartClick, onKidneyClick }) {
           strokeWidth="2.5"
         />
 
-        {/* Left Leg - Curved, tapered */}
-        <path
-          d="M 75 265 Q 72 320 70 420"
-          fill="none"
-          stroke="#d4a574"
-          strokeWidth="11"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        {/* Left Leg - Curved, tapered - ANIMATED */}
+        <g className="animate-leg-left">
+          <path
+            d="M 75 265 Q 72 320 70 420"
+            fill="none"
+            stroke="#d4a574"
+            strokeWidth="11"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </g>
 
-        {/* Right Leg - Curved, tapered */}
-        <path
-          d="M 105 265 Q 108 320 110 420"
-          fill="none"
-          stroke="#d4a574"
-          strokeWidth="11"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        {/* Right Leg - Curved, tapered - ANIMATED */}
+        <g className="animate-leg-right">
+          <path
+            d="M 105 265 Q 108 320 110 420"
+            fill="none"
+            stroke="#d4a574"
+            strokeWidth="11"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </g>
 
         {/* Feet */}
         <ellipse cx="70" cy="435" rx="8" ry="10" fill="#f5deb3" stroke="#8b7355" strokeWidth="1.5" />
@@ -229,28 +297,30 @@ function MaleSkeleton({ onHeartClick, onKidneyClick }) {
 
 function FemaleSkeleton({ onHeartClick, onKidneyClick }) {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center skeleton-container">
       <h3 className="text-xl font-bold text-gray-900 mb-6">Female</h3>
       <svg
         viewBox="0 0 180 500"
         className="w-full max-w-xs"
         style={{ maxWidth: '280px' }}
       >
-        {/* Head - More realistic oval shape */}
-        <ellipse cx="90" cy="40" rx="24" ry="28" fill="#f5deb3" stroke="#8b7355" strokeWidth="2" />
+        {/* Head - More realistic oval shape - ANIMATED */}
+        <g className="animate-head">
+          <ellipse cx="90" cy="40" rx="24" ry="28" fill="#f5deb3" stroke="#8b7355" strokeWidth="2" />
 
-        {/* Facial features - Eyes */}
-        <circle cx="82" cy="36" r="2" fill="#333" />
-        <circle cx="98" cy="36" r="2" fill="#333" />
+          {/* Facial features - Eyes */}
+          <circle cx="82" cy="36" r="2" fill="#333" />
+          <circle cx="98" cy="36" r="2" fill="#333" />
 
-        {/* Nose */}
-        <line x1="90" y1="36" x2="90" y2="42" stroke="#8b7355" strokeWidth="1" />
+          {/* Nose */}
+          <line x1="90" y1="36" x2="90" y2="42" stroke="#8b7355" strokeWidth="1" />
 
-        {/* Mouth */}
-        <path d="M 82 46 Q 90 48 98 46" stroke="#8b7355" strokeWidth="1" fill="none" />
+          {/* Mouth */}
+          <path d="M 82 46 Q 90 48 98 46" stroke="#8b7355" strokeWidth="1" fill="none" />
 
-        {/* Neck - Slender */}
-        <path d="M 87 68 L 87 80 L 93 80 L 93 68 Z" fill="#f5deb3" stroke="#8b7355" strokeWidth="1.5" />
+          {/* Neck - Slender */}
+          <path d="M 87 68 L 87 80 L 93 80 L 93 68 Z" fill="#f5deb3" stroke="#8b7355" strokeWidth="1.5" />
+        </g>
 
         {/* Shoulders - Narrower than male */}
         <path
@@ -268,25 +338,29 @@ function FemaleSkeleton({ onHeartClick, onKidneyClick }) {
           strokeWidth="2"
         />
 
-        {/* Left Arm - Curved, graceful */}
-        <path
-          d="M 63 102 Q 42 125 37 170 Q 35 210 34 250"
-          fill="none"
-          stroke="#d4a574"
-          strokeWidth="8.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        {/* Left Arm - Curved, graceful - ANIMATED */}
+        <g className="animate-arm-left">
+          <path
+            d="M 63 102 Q 42 125 37 170 Q 35 210 34 250"
+            fill="none"
+            stroke="#d4a574"
+            strokeWidth="8.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </g>
 
-        {/* Right Arm - Curved, graceful */}
-        <path
-          d="M 117 102 Q 138 125 143 170 Q 145 210 146 250"
-          fill="none"
-          stroke="#d4a574"
-          strokeWidth="8.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        {/* Right Arm - Curved, graceful - ANIMATED */}
+        <g className="animate-arm-right">
+          <path
+            d="M 117 102 Q 138 125 143 170 Q 145 210 146 250"
+            fill="none"
+            stroke="#d4a574"
+            strokeWidth="8.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </g>
 
         {/* Waist - Curves inward for natural shape */}
         <path
@@ -390,25 +464,29 @@ function FemaleSkeleton({ onHeartClick, onKidneyClick }) {
           strokeWidth="2.5"
         />
 
-        {/* Left Leg - Curved, tapered */}
-        <path
-          d="M 72 270 Q 68 325 65 420"
-          fill="none"
-          stroke="#d4a574"
-          strokeWidth="10.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        {/* Left Leg - Curved, tapered - ANIMATED */}
+        <g className="animate-leg-left">
+          <path
+            d="M 72 270 Q 68 325 65 420"
+            fill="none"
+            stroke="#d4a574"
+            strokeWidth="10.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </g>
 
-        {/* Right Leg - Curved, tapered */}
-        <path
-          d="M 108 270 Q 112 325 115 420"
-          fill="none"
-          stroke="#d4a574"
-          strokeWidth="10.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
+        {/* Right Leg - Curved, tapered - ANIMATED */}
+        <g className="animate-leg-right">
+          <path
+            d="M 108 270 Q 112 325 115 420"
+            fill="none"
+            stroke="#d4a574"
+            strokeWidth="10.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </g>
 
         {/* Feet */}
         <ellipse cx="65" cy="435" rx="8" ry="10" fill="#f5deb3" stroke="#8b7355" strokeWidth="1.5" />
