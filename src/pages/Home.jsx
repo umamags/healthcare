@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import { questions } from '../data/questions'
+import AnatomySkeletons from '../components/AnatomySkeletons'
 
-export default function Home({ onQuestionClick, onComparisonClick }) {
+export default function Home({ onQuestionClick, onComparisonClick, onCancerClick, onHeartClick, onKidneyClick }) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">
-            Healthcare Explained
+            Health and Healthcare Explained
           </h1>
           <p className="text-lg text-gray-600">
             Understand how healthcare systems work before you need it
@@ -21,6 +22,12 @@ export default function Home({ onQuestionClick, onComparisonClick }) {
 
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-12">
+        {/* Anatomy Skeletons */}
+        <AnatomySkeletons
+          onHeartClick={onHeartClick}
+          onKidneyClick={onKidneyClick}
+        />
+
         {/* Hero Section */}
         <section className="mb-16 bg-white rounded-lg shadow-md p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
@@ -71,6 +78,57 @@ export default function Home({ onQuestionClick, onComparisonClick }) {
             className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-all shadow-md hover:shadow-lg"
           >
             Explore Country Profiles →
+          </button>
+        </section>
+
+        {/* Cancer Education CTA */}
+        <section className="bg-gradient-to-r from-red-50 to-orange-50 rounded-lg shadow-md p-8 mb-16 border-2 border-red-200">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            🎗️ Cancer Explained
+          </h2>
+          <p className="text-gray-600 mb-6">
+            A comprehensive guide for people who suspect they might have cancer. Learn about symptoms, diagnosis,
+            treatment options, and financial preparation in the USA and India.
+          </p>
+          <button
+            onClick={onCancerClick}
+            className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-bold py-3 px-8 rounded-lg transition-all shadow-md hover:shadow-lg"
+          >
+            Learn About Cancer →
+          </button>
+        </section>
+
+        {/* Heart Health CTA */}
+        <section className="bg-gradient-to-r from-pink-50 to-red-50 rounded-lg shadow-md p-8 mb-16 border-2 border-pink-200">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            ❤️ Heart Health Guide
+          </h2>
+          <p className="text-gray-600 mb-6">
+            Understanding heart disease: risk factors, types, symptoms, screening, treatment options, and living well.
+            Includes USA and India cost comparisons and interactive risk assessments.
+          </p>
+          <button
+            onClick={onHeartClick}
+            className="bg-gradient-to-r from-pink-600 to-red-600 hover:from-pink-700 hover:to-red-700 text-white font-bold py-3 px-8 rounded-lg transition-all shadow-md hover:shadow-lg"
+          >
+            Learn About Heart Health →
+          </button>
+        </section>
+
+        {/* Kidney Health CTA */}
+        <section className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-lg shadow-md p-8 mb-16 border-2 border-cyan-200">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            💧 Kidney Health Guide
+          </h2>
+          <p className="text-gray-600 mb-6">
+            Understanding kidney disease: function, CKD stages, dialysis, transplant, and living well.
+            Includes CKD stage calculator, renal diet guide, and kidney disease treatment options in USA and India.
+          </p>
+          <button
+            onClick={onKidneyClick}
+            className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-all shadow-md hover:shadow-lg"
+          >
+            Learn About Kidney Health →
           </button>
         </section>
 
