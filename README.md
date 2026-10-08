@@ -1,97 +1,77 @@
-# Healthcare Explained - A Global Healthcare Comparison Site
+# Healthcare System Comparison Site
 
-An interactive educational website explaining how healthcare systems work around the world.
+A comprehensive platform for exploring and comparing global healthcare systems with detailed disease-specific information and country profiles.
 
-## Core Concept
+## Overview
 
-> **Medicine tells us how to treat disease. Healthcare tells us how society delivers that treatment.**
-
-This site answers **10 major questions** to help people understand healthcare systems:
-
-1. What happens when I get sick? (Patient journey)
-2. How is healthcare organized? (System architecture & financing)
-3. What does healthcare actually cost? (Costs & financial burden)
-4. Insurance: The confusing part (How insurance works)
-5. How do doctors diagnose and treat disease? (Clinical pathways)
-6. Which diseases consume healthcare resources? (Disease burden & financial catastrophe)
-7. Access: Can you actually get care? (Availability & wait times)
-8. Quality of healthcare (Outcomes & safety)
-9. Technology and the future of healthcare (Digital health & AI)
-10. Who is responsible when things go wrong? (Governance & accountability)
+This project provides an interactive way to understand healthcare systems around the world. It combines country-level healthcare data with disease-specific information, helping users explore global health trends and access detailed medical information.
 
 ## Features
 
-### Main Pages
+### Country Comparison
+- Compare healthcare systems across different countries
+- View country-specific health profiles and statistics
+- Understand variations in healthcare approaches globally
 
-- **Home Page**: Overview of the 10 questions with detailed explanations
-  - Interactive cost calculator: Compare $10k hospital bill costs across countries
-  - Patient journey example: Follow "John" through chest pain in 5 different countries
+### Disease Hubs
+- **Cancer Hub**: Comprehensive cancer information, prevention strategies, and treatment resources
+- **Heart Hub**: Cardiovascular health information and disease prevention
+- **Kidney Hub**: Kidney disease information and health management
 
-- **Country Comparison Page**: Quick comparison of all healthcare systems
-  - Country cards for USA, UK, India, Germany, Canada
-  - Quick comparison matrix showing key metrics
-  - Key insights about healthcare systems
-
-- **Country Detail Pages**: Standardized profiles for each country
-  - 14-point scorecard covering all aspects
-  - Strengths and weaknesses
-  - Best suited for whom
-
-### Interactive Elements
-
-1. **Cost Calculator** - Show what a $10,000 hospital bill costs in each country
-2. **Patient Journey** - Follow a patient through chest pain diagnosis in each country
-3. **Comparison Tables** - See how countries compare on key metrics
-4. **Question Deep Dives** - Full explanations of each of the 10 questions
+### Interactive Content
+- Detailed disease information with anatomy visualizations
+- Question-based learning modules
+- Media previews and educational resources
+- Country-specific health data and comparisons
 
 ## Technology Stack
 
-- **React 19** - UI library
-- **Vite** - Build tool & dev server
-- **Tailwind CSS** - Utility-first styling
-- **JavaScript (ES6+)** - Lightweight, no TypeScript overhead
+- **Frontend**: React 19 with Vite
+- **Styling**: Tailwind CSS
+- **Build Tool**: Vite
+- **Development**: Modern JavaScript (ES modules)
 
-## Running Locally
-
-### Development
+## Getting Started
 
 ```bash
+# Install dependencies
 npm install
+
+# Start development server
 npm run dev
-```
 
-Access at http://localhost:5173/
-
-### Build for Production
-
-```bash
+# Build for production
 npm run build
+
+# Preview production build
 npm run preview
 ```
 
-Output in `dist/` directory.
+## Project Structure
 
-## Countries Featured
+```
+src/
+├── components/       # Reusable UI components
+├── pages/           # Page components for different views
+├── App.jsx          # Main application component
+└── main.jsx         # Entry point
 
-- 🇺🇸 United States (Mixed public/private)
-- 🇬🇧 United Kingdom (Tax-funded NHS)
-- 🇮🇳 India (Mixed with large out-of-pocket burden)
-- 🇩🇪 Germany (Social insurance)
-- 🇨🇦 Canada (National single-payer)
+CountryProfiles/    # Country-specific data
+references/         # Reference data and resources
+```
 
-## Deployment
+## Key Components
 
-See [DEPLOYMENT.md](DEPLOYMENT.md) for GitHub Pages and ai-lab.in setup.
+- **Home**: Landing page with navigation
+- **CountryComparison**: Side-by-side country healthcare comparison
+- **Disease Hubs**: Dedicated sections for cancer, heart, and kidney health
+- **QuestionDetail**: Detailed educational content for specific topics
+- **AnatomySkeletons**: Interactive anatomy visualizations
 
-Default paths:
-- GitHub Pages: https://umamags.github.io/healthcare/
-- ai-lab.in: https://ai-lab.in/healthcare/
+## Data
 
-## Future Enhancements
+The site includes detailed profiles for countries around the world and comprehensive disease information organized by category and region.
 
-- Add more countries (France, Japan, Australia, etc.)
-- Patient journey examples for other conditions (cancer, diabetes, pregnancy)
-- Interactive visualizations and charts
-- Regional comparisons within countries
-- Search and filtering functionality
-- Multi-language support
+## Purpose
+
+This project serves as an educational resource for understanding global healthcare systems and exploring disease-specific medical information in an accessible, interactive format.
