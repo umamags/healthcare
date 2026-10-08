@@ -9,6 +9,7 @@ import HeartHub from './pages/HeartHub'
 import HeartContent from './pages/HeartContent'
 import KidneyHub from './pages/KidneyHub'
 import KidneyContent from './pages/KidneyContent'
+import Footer from './components/Footer'
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -136,6 +137,7 @@ export default function App() {
           onBack={handleBackToKidneyHub}
         />
       )}
+      <Footer />
     </div>
   )
 }

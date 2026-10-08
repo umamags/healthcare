@@ -9,3 +9,38 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Footer */
+
+.footer {
+  margin-top: 40px;
+  padding: 16px 20px 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  list-style: none;
+}
+
+.footer-links a {
+  color: #3b82f6;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
