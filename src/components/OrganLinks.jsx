@@ -8,7 +8,7 @@ export default function OrganLinks({ onOrganClick }) {
       </h2>
       <p className="text-gray-600 mb-6">
         Click an organ to open its quick-reference card. Press More to read the full article.
-        The first 19 organs appear on both figures. Organs marked female appear on the female figure only.
+        The first 19 organs appear on both figures. Organs marked Female or Male appear on that figure only.
       </p>
 
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
@@ -20,7 +20,9 @@ export default function OrganLinks({ onOrganClick }) {
           >
             {organ.name}
             {organ.figures.length === 1 && (
-              <span className="block text-xs font-normal text-pink-600">Female</span>
+              <span className={`block text-xs font-normal ${organ.figures[0] === 'female' ? 'text-pink-600' : 'text-blue-600'}`}>
+                {organ.figures[0] === 'female' ? 'Female' : 'Male'}
+              </span>
             )}
           </button>
         ))}

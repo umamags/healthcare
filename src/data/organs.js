@@ -37,7 +37,13 @@ const organNames = [
   { id: 'ovaries', name: 'Ovaries', image: 'ovaries.jpg', spots: [[66, 220], [114, 220]], figures: ['female'] },
   { id: 'uterus', name: 'Uterus', image: 'uterus.jpg', spots: [[90, 228]], figures: ['female'] },
   { id: 'vagina', name: 'Vagina', image: 'vagina.png', spots: [[90, 262]], figures: ['female'] },
-  { id: 'vulva', name: 'Vulva', image: 'vulva.jpg', spots: [[90, 278]], figures: ['female'] }
+  { id: 'vulva', name: 'Vulva', image: 'vulva.jpg', spots: [[90, 278]], figures: ['female'] },
+  { id: 'penis', name: 'Penis', image: 'penis.jpg', spots: [[90, 258]], figures: ['male'] },
+  { id: 'prostate', name: 'Prostate', image: 'prostate.jpg', spots: [[90, 240]], figures: ['male'] },
+  { id: 'scrotum', name: 'Scrotum', image: 'scrotum.jpg', spots: [[90, 274]], figures: ['male'] },
+  { id: 'seminal-vesicles', name: 'Seminal vesicles', image: 'seminal-vesicles.jpg', spots: [[78, 228], [102, 228]], figures: ['male'] },
+  { id: 'sperm-ducts', name: 'Sperm ducts', image: 'sperm-ducts.jpg', spots: [[74, 252], [106, 252]], figures: ['male'] },
+  { id: 'testes', name: 'Testes', image: 'testes.jpg', spots: [[85, 286], [95, 286]], figures: ['male'] }
 ]
 
 // Credits from references/images/SOURCES2.txt. Shown under each image as the licence requires.
@@ -67,7 +73,13 @@ const imageCredits = {
   ovaries: { source: 'Illu ovary', url: 'https://commons.wikimedia.org/wiki/File:Illu_ovary.jpg', licence: 'Public domain' },
   uterus: { source: 'Blausen Medical', url: 'https://commons.wikimedia.org/wiki/File:Blausen_0399_FemaleReproSystem_01.png', licence: 'CC BY 3.0' },
   vagina: { source: 'Blausen Medical', url: 'https://commons.wikimedia.org/wiki/File:Blausen_0400_FemaleReproSystem_02b.png', licence: 'CC BY' },
-  vulva: { source: 'Female perineum', url: 'https://commons.wikimedia.org/wiki/File:Female_Perineum.png', licence: 'CC BY-SA 4.0' }
+  vulva: { source: 'Female perineum', url: 'https://commons.wikimedia.org/wiki/File:Female_Perineum.png', licence: 'CC BY-SA 4.0' },
+  testes: { source: 'Testicle cross-section, numbered', url: 'https://commons.wikimedia.org/wiki/File:Testicle-Revised.jpg', licence: 'CC BY-SA 3.0' },
+  prostate: { source: 'Prostate and nearby organs', url: 'https://commons.wikimedia.org/wiki/File:Prostatelead.jpg', licence: 'Public domain' },
+  penis: { source: 'Penis anatomy, OpenStax', url: 'https://commons.wikimedia.org/wiki/File:Figure_28_01_06.jpg', licence: 'CC BY 3.0' },
+  scrotum: { source: 'Scrotum anatomy, OpenStax', url: 'https://commons.wikimedia.org/wiki/File:Figure_28_01_02.jpg', licence: 'CC BY 3.0' },
+  'sperm-ducts': { source: 'Male reproductive system, OpenStax', url: 'https://commons.wikimedia.org/wiki/File:Figure_28_01_01.jpg', licence: 'CC BY 3.0' },
+  'seminal-vesicles': { source: 'Reproductive system, 1911 Encyclopaedia Britannica plate', url: 'https://commons.wikimedia.org/wiki/File:EB1911_Reproductive_System,_in_Anatomy_-_bladder,_prostate,_seminal_vesicles_and_vasa_deferentia.jpg', licence: 'Public domain' }
 }
 
 export const organs = organNames.map((organ) => ({

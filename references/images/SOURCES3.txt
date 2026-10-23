@@ -1,0 +1,76 @@
+Organ images for ai-lab.in/healthcare — one anatomical illustration per organ.
+All sourced from Wikimedia Commons under open licenses (public domain or Creative Commons).
+Attribution: for CC-licensed images, credit the source as noted when publishing.
+
+brain.png — Brain lobes, labeled (Blausen Medical)
+  Source: https://commons.wikimedia.org/wiki/File:Blausen_0111_BrainLobes.png — CC BY 3.0
+eyes.svg — Schematic diagram of the human eye, labeled
+  Source: https://commons.wikimedia.org/wiki/File:Schematic_diagram_of_the_human_eye.svg — CC BY-SA 3.0
+ears.svg — Anatomy of the human ear, labeled
+  Source: https://commons.wikimedia.org/wiki/File:Anatomy_of_the_Human_Ear.svg — CC BY 2.5
+nose.png — Nose and nasal cavities, labeled
+  Source: https://commons.wikimedia.org/wiki/File:Nose_and_nasal_cavities.png — Public domain
+throat.png — Tonsils & throat anatomy (Blausen Medical)
+  Source: https://commons.wikimedia.org/wiki/File:Blausen_0860_Tonsils%26Throat_Anatomy.png — CC BY 3.0
+mouth.png — Mouth anatomy, labeled (Blausen Medical)
+  Source: https://commons.wikimedia.org/wiki/File:Blausen_0653_MouthAnatomy.png — CC BY 3.0
+teeth.png — Tooth anatomy (Blausen Medical)
+  Source: https://commons.wikimedia.org/wiki/File:Blausen_0863_ToothAnatomy_02.png — CC BY 3.0
+skin.jpg — Skin anatomy (NCI Visuals Online)
+  Source: https://commons.wikimedia.org/wiki/File:Anatomy_The_Skin_-_NCI_Visuals_Online.jpg — Public domain
+heart.jpg — Diagram of the human heart, labeled
+  Source: https://commons.wikimedia.org/wiki/File:Diagram_of_the_Human_Heart.jpg — CC BY 4.0
+lungs.svg — Respiratory system, labeled (English version)
+  Source: https://commons.wikimedia.org/wiki/File:Respiratory_system_complete_en.svg — Public domain
+liver.jpg — Liver and gallbladder (numbered — legend on the source page)
+  Source: https://commons.wikimedia.org/wiki/File:Illu_liver_gallbladder.jpg — Public domain
+stomach.png — Stomach anatomy (numbered — legend on the source page)
+  Source: https://commons.wikimedia.org/wiki/File:Anatomy_of_stomach_numbered.png — CC BY-SA 3.0
+intestines.svg — Digestive system diagram, labeled (English version)
+  Source: https://commons.wikimedia.org/wiki/File:Digestive_system_diagram_en.svg — Public domain
+bone.svg — Human skeleton, front view, labeled (English version)
+  Source: https://commons.wikimedia.org/wiki/File:Human_skeleton_front_en.svg — Public domain
+appendix.png — Vermiform appendix in the digestive tract, labeled
+  Source: https://commons.wikimedia.org/wiki/File:Vermiform_Appendix_(PSF).png — Public domain
+kidneys.png — Kidney anatomy (Blausen Medical)
+  Source: https://commons.wikimedia.org/wiki/File:Blausen_0592_KidneyAnatomy_01.png — CC BY 3.0
+hands.png — Hand bones (numbered — legend on the source page)
+  Source: https://commons.wikimedia.org/wiki/File:Hand_bones_numbered.png — CC BY-SA 3.0
+feet.png — Bones of the foot, side view, labeled (Gray's Anatomy plate)
+  Source: https://commons.wikimedia.org/wiki/File:Gray290.png — Public domain
+spinal-cord.png — Spinal cord sectional anatomy
+  Source: https://commons.wikimedia.org/wiki/File:Spinal_Cord_Sectional_Anatomy.png — CC BY-SA 4.0
+
+--- Female reproductive system (added later) ---
+uterus.png — Female reproductive system, frontal view, labeled (Blausen Medical)
+  Source: https://commons.wikimedia.org/wiki/File:Blausen_0399_FemaleReproSystem_01.png — CC BY 3.0
+ovaries.jpg — Ovary with fallopian tube and uterus (numbered — legend on the source page)
+  Source: https://commons.wikimedia.org/wiki/File:Illu_ovary.jpg — Public domain
+fallopian-tubes.svg — Female reproductive system scheme, labeled (English version)
+  Source: https://commons.wikimedia.org/wiki/File:Scheme_female_reproductive_system-en.svg — Public domain
+cervix.jpg — Uterus diagram with cervix circled, labeled
+  Source: https://commons.wikimedia.org/wiki/File:Illu_cervix.jpg — Public domain
+vagina.png — Female pelvis, side (sagittal) view, labeled (Blausen Medical)
+  Source: https://commons.wikimedia.org/wiki/File:Blausen_0400_FemaleReproSystem_02b.png — CC BY (Attribution)
+vulva.png — Female perineum / external anatomy, labeled (Blausen Medical)
+  Source: https://commons.wikimedia.org/wiki/File:Female_Perineum.png — CC BY-SA 4.0
+breasts.png — Breast anatomy scheme, cross-section (numbered — legend on the source page; Patrick J. Lynch)
+  Source: https://commons.wikimedia.org/wiki/File:Breast_anatomy_normal_scheme.png — CC BY 3.0
+
+--- Male reproductive system (added later) ---
+testes.jpg — Testicle cross-section (numbered — legend on the source page)
+  Source: https://commons.wikimedia.org/wiki/File:Testicle-Revised.jpg — CC BY-SA 3.0
+prostate.jpg — Prostate and nearby organs, labeled (NCI)
+  Source: https://commons.wikimedia.org/wiki/File:Prostatelead.jpg — Public domain
+penis.jpg — Penis anatomy, lateral and cross-section views, labeled (OpenStax)
+  Source: https://commons.wikimedia.org/wiki/File:Figure_28_01_06.jpg — CC BY 3.0
+scrotum.jpg — Scrotum anatomy, three-panel view, labeled (OpenStax)
+  Source: https://commons.wikimedia.org/wiki/File:Figure_28_01_02.jpg — CC BY 3.0
+sperm-ducts.jpg — Male reproductive system, side view, labeled — vas deferens traced end to end (OpenStax)
+  Source: https://commons.wikimedia.org/wiki/File:Figure_28_01_01.jpg — CC BY 3.0
+seminal-vesicles.jpg — Pelvis from behind: bladder, prostate, seminal vesicles and vas deferens, labeled (Encyclopaedia Britannica 1911 plate)
+  Source: https://commons.wikimedia.org/wiki/File:EB1911_Reproductive_System,_in_Anatomy_-_bladder,_prostate,_seminal_vesicles_and_vasa_deferentia.jpg — Public domain
+
+Notes:
+- Six diagrams (liver, stomach, hands, ovaries, breasts, testes) use numbers instead of text labels; the number legend is on each source page above.
+- The liver, ovaries, feet, and prostate images are smaller/older plates; the seminal vesicles image is a detailed 1911 engraving. The rest are full-size.
