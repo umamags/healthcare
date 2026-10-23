@@ -1,15 +1,17 @@
-import { useState } from 'react'
+import { lazy, Suspense, useState } from 'react'
 import Home from './pages/Home'
-import CountryComparison from './pages/CountryComparison'
-import QuestionDetail from './pages/QuestionDetail'
-import CountryDetail from './pages/CountryDetail'
-import CancerHub from './pages/CancerHub'
-import CancerContent from './pages/CancerContent'
-import HeartHub from './pages/HeartHub'
-import HeartContent from './pages/HeartContent'
-import KidneyHub from './pages/KidneyHub'
-import KidneyContent from './pages/KidneyContent'
 import Footer from './components/Footer'
+
+// Only the home page loads up front. Other pages load when first opened, keeping the main bundle small.
+const CountryComparison = lazy(() => import('./pages/CountryComparison'))
+const QuestionDetail = lazy(() => import('./pages/QuestionDetail'))
+const CountryDetail = lazy(() => import('./pages/CountryDetail'))
+const CancerHub = lazy(() => import('./pages/CancerHub'))
+const CancerContent = lazy(() => import('./pages/CancerContent'))
+const HeartHub = lazy(() => import('./pages/HeartHub'))
+const HeartContent = lazy(() => import('./pages/HeartContent'))
+const KidneyHub = lazy(() => import('./pages/KidneyHub'))
+const KidneyContent = lazy(() => import('./pages/KidneyContent'))
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -74,6 +76,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Suspense fallback={null}>
       {currentPage === 'home' && (
         <Home
           onQuestionClick={handleQuestionClick}
@@ -137,6 +140,7 @@ export default function App() {
           onBack={handleBackToKidneyHub}
         />
       )}
+      </Suspense>
       <Footer />
     </div>
   )

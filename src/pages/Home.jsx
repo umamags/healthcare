@@ -1,8 +1,21 @@
 import { useState } from 'react'
 import { questions } from '../data/questions'
 import AnatomySkeletons from '../components/AnatomySkeletons'
+import OrganLinks from '../components/OrganLinks'
+import OrganModal from '../components/OrganModal'
+import { organs } from '../data/organs'
 
 export default function Home({ onQuestionClick, onComparisonClick, onCancerClick, onHeartClick, onKidneyClick }) {
+  const [selectedOrganId, setSelectedOrganId] = useState(null)
+  const selectedOrgan = organs.find((organ) => organ.id === selectedOrganId)
+
+  const closeOrgan = () => setSelectedOrganId(null)
+
+  const openHub = (hub) => {
+    if (hub === 'heart') onHeartClick()
+    if (hub === 'kidneys') onKidneyClick()
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Header */}
@@ -23,10 +36,12 @@ export default function Home({ onQuestionClick, onComparisonClick, onCancerClick
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-12">
         {/* Anatomy Skeletons */}
-        <AnatomySkeletons
-          onHeartClick={onHeartClick}
-          onKidneyClick={onKidneyClick}
-        />
+        <AnatomySkeletons onOrganClick={setSelectedOrganId} />
+
+        {/* Organ Links */}
+        <OrganLinks onOrganClick={setSelectedOrganId} />
+
+        <OrganModal organ={selectedOrgan} onClose={closeOrgan} onHubClick={openHub} />
 
         {/* Hero Section */}
         <section className="mb-16 bg-white rounded-lg shadow-md p-8">

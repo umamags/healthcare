@@ -1,4 +1,6 @@
-export default function AnatomySkeletons({ onHeartClick, onKidneyClick }) {
+import { organs } from '../data/organs'
+
+export default function AnatomySkeletons({ onOrganClick }) {
   return (
     <section className="bg-gradient-to-b from-white to-gray-50 py-12 mb-16">
       <style>{`
@@ -64,25 +66,25 @@ export default function AnatomySkeletons({ onHeartClick, onKidneyClick }) {
           Human Anatomy Overview
         </h2>
         <p className="text-center text-gray-600 mb-12">
-          Hover over organs for details. Click on the heart or kidneys to explore these systems
+          Hover over a dot to see the organ name. Click a dot to open its card and image
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
           {/* Male Skeleton */}
-          <MaleSkeleton onHeartClick={onHeartClick} onKidneyClick={onKidneyClick} />
+          <MaleSkeleton onOrganClick={onOrganClick} />
 
           {/* Female Skeleton */}
-          <FemaleSkeleton onHeartClick={onHeartClick} onKidneyClick={onKidneyClick} />
+          <FemaleSkeleton onOrganClick={onOrganClick} />
         </div>
 
         <div className="mt-8 grid grid-cols-2 md:grid-cols-5 gap-4 text-center text-sm">
           <div className="flex items-center justify-center gap-2">
             <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-            <span className="text-gray-700">Heart (Clickable)</span>
+            <span className="text-gray-700">Heart</span>
           </div>
           <div className="flex items-center justify-center gap-2">
             <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
-            <span className="text-gray-700">Kidneys (Clickable)</span>
+            <span className="text-gray-700">Kidneys</span>
           </div>
           <div className="flex items-center justify-center gap-2">
             <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
@@ -102,14 +104,14 @@ export default function AnatomySkeletons({ onHeartClick, onKidneyClick }) {
   )
 }
 
-function MaleSkeleton({ onHeartClick, onKidneyClick }) {
+function MaleSkeleton({ onOrganClick }) {
   return (
     <div className="flex flex-col items-center skeleton-container">
       <h3 className="text-xl font-bold text-gray-900 mb-6">Male</h3>
+      <div className="relative w-full" style={{ maxWidth: '280px' }}>
       <svg
         viewBox="0 0 180 500"
-        className="w-full max-w-xs"
-        style={{ maxWidth: '280px' }}
+        className="w-full"
       >
         {/* Head - More realistic oval shape - ANIMATED */}
         <g className="animate-head">
@@ -196,11 +198,7 @@ function MaleSkeleton({ onHeartClick, onKidneyClick }) {
         </g>
 
         {/* Heart - CLICKABLE with Tooltip */}
-        <g
-          onClick={onHeartClick}
-          style={{ cursor: 'pointer' }}
-          className="hover:opacity-60 transition-opacity"
-        >
+        <g>
           <path
             d="M 90 110 Q 90 100 98 100 Q 105 100 105 108 Q 105 118 90 130 Q 75 118 75 108 Q 75 100 82 100 Q 90 100 90 110"
             fill="#ef4444"
@@ -208,7 +206,7 @@ function MaleSkeleton({ onHeartClick, onKidneyClick }) {
             strokeWidth="1.5"
             opacity="0.95"
           />
-          <title>Heart (Clickable): Pumps blood throughout your body. Click to explore Heart Health Guide</title>
+          <title>Heart: Pumps blood throughout your body</title>
         </g>
 
         {/* Liver - Tooltip */}
@@ -236,23 +234,15 @@ function MaleSkeleton({ onHeartClick, onKidneyClick }) {
         </g>
 
         {/* Left Kidney - CLICKABLE with Tooltip */}
-        <g
-          onClick={onKidneyClick}
-          style={{ cursor: 'pointer' }}
-          className="hover:opacity-60 transition-opacity"
-        >
+        <g>
           <ellipse cx="62" cy="210" rx="12" ry="22" fill="none" stroke="#f97316" strokeWidth="3" opacity="0.95" />
-          <title>Left Kidney (Clickable): Filters waste to make urine. Click to explore Kidney Health Guide</title>
+          <title>Left Kidney: Filters waste to make urine</title>
         </g>
 
         {/* Right Kidney - CLICKABLE with Tooltip */}
-        <g
-          onClick={onKidneyClick}
-          style={{ cursor: 'pointer' }}
-          className="hover:opacity-60 transition-opacity"
-        >
+        <g>
           <ellipse cx="118" cy="210" rx="12" ry="22" fill="none" stroke="#f97316" strokeWidth="3" opacity="0.95" />
-          <title>Right Kidney (Clickable): Filters waste to make urine. Click to explore Kidney Health Guide</title>
+          <title>Right Kidney: Filters waste to make urine</title>
         </g>
 
         {/* Pelvis - Natural curves */}
@@ -291,18 +281,20 @@ function MaleSkeleton({ onHeartClick, onKidneyClick }) {
         <ellipse cx="70" cy="435" rx="8" ry="10" fill="#f5deb3" stroke="#8b7355" strokeWidth="1.5" />
         <ellipse cx="110" cy="435" rx="8" ry="10" fill="#f5deb3" stroke="#8b7355" strokeWidth="1.5" />
       </svg>
+      <OrganDots sex="male" onOrganClick={onOrganClick} />
+      </div>
     </div>
   )
 }
 
-function FemaleSkeleton({ onHeartClick, onKidneyClick }) {
+function FemaleSkeleton({ onOrganClick }) {
   return (
     <div className="flex flex-col items-center skeleton-container">
       <h3 className="text-xl font-bold text-gray-900 mb-6">Female</h3>
+      <div className="relative w-full" style={{ maxWidth: '280px' }}>
       <svg
         viewBox="0 0 180 500"
-        className="w-full max-w-xs"
-        style={{ maxWidth: '280px' }}
+        className="w-full"
       >
         {/* Head - More realistic oval shape - ANIMATED */}
         <g className="animate-head">
@@ -397,11 +389,7 @@ function FemaleSkeleton({ onHeartClick, onKidneyClick }) {
         </g>
 
         {/* Heart - CLICKABLE with Tooltip */}
-        <g
-          onClick={onHeartClick}
-          style={{ cursor: 'pointer' }}
-          className="hover:opacity-60 transition-opacity"
-        >
+        <g>
           <path
             d="M 90 108 Q 90 98 98 98 Q 105 98 105 106 Q 105 116 90 128 Q 75 116 75 106 Q 75 98 82 98 Q 90 98 90 108"
             fill="#ef4444"
@@ -409,7 +397,7 @@ function FemaleSkeleton({ onHeartClick, onKidneyClick }) {
             strokeWidth="1.5"
             opacity="0.95"
           />
-          <title>Heart (Clickable): Pumps blood throughout your body. Click to explore Heart Health Guide</title>
+          <title>Heart: Pumps blood throughout your body</title>
         </g>
 
         {/* Liver - Tooltip */}
@@ -437,23 +425,15 @@ function FemaleSkeleton({ onHeartClick, onKidneyClick }) {
         </g>
 
         {/* Left Kidney - CLICKABLE with Tooltip */}
-        <g
-          onClick={onKidneyClick}
-          style={{ cursor: 'pointer' }}
-          className="hover:opacity-60 transition-opacity"
-        >
+        <g>
           <ellipse cx="60" cy="208" rx="12" ry="22" fill="none" stroke="#f97316" strokeWidth="3" opacity="0.95" />
-          <title>Left Kidney (Clickable): Filters waste to make urine. Click to explore Kidney Health Guide</title>
+          <title>Left Kidney: Filters waste to make urine</title>
         </g>
 
         {/* Right Kidney - CLICKABLE with Tooltip */}
-        <g
-          onClick={onKidneyClick}
-          style={{ cursor: 'pointer' }}
-          className="hover:opacity-60 transition-opacity"
-        >
+        <g>
           <ellipse cx="120" cy="208" rx="12" ry="22" fill="none" stroke="#f97316" strokeWidth="3" opacity="0.95" />
-          <title>Right Kidney (Clickable): Filters waste to make urine. Click to explore Kidney Health Guide</title>
+          <title>Right Kidney: Filters waste to make urine</title>
         </g>
 
         {/* Pelvis - Wider for female, natural curves */}
@@ -492,6 +472,35 @@ function FemaleSkeleton({ onHeartClick, onKidneyClick }) {
         <ellipse cx="65" cy="435" rx="8" ry="10" fill="#f5deb3" stroke="#8b7355" strokeWidth="1.5" />
         <ellipse cx="115" cy="435" rx="8" ry="10" fill="#f5deb3" stroke="#8b7355" strokeWidth="1.5" />
       </svg>
+      <OrganDots sex="female" onOrganClick={onOrganClick} />
+      </div>
+    </div>
+  )
+}
+
+// Dots sit over the figure, outside the SVG, so the head, arm and leg animations keep running.
+// Positions are in the figure's 180 x 500 viewBox, converted to percentages.
+function OrganDots({ sex, onOrganClick }) {
+  return (
+    <div className="absolute inset-0 pointer-events-none">
+      {organs.filter((organ) => organ.figures.includes(sex)).flatMap((organ) =>
+        organ.spots.map(([x, y], i) => (
+          <button
+            key={`${organ.id}-${i}`}
+            type="button"
+            aria-label={organ.name}
+            onClick={() => onOrganClick(organ.id)}
+            className="group pointer-events-auto absolute w-5 h-5 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center cursor-pointer"
+            style={{ left: `${(x / 180) * 100}%`, top: `${(y / 500) * 100}%` }}
+          >
+            <span className="absolute inset-0 rounded-full bg-blue-500 opacity-60 animate-ping" />
+            <span className="relative w-3 h-3 rounded-full bg-blue-600 border-2 border-white shadow" />
+            <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 whitespace-nowrap rounded bg-gray-900 px-2 py-1 text-xs font-semibold text-white opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+              {organ.name}
+            </span>
+          </button>
+        ))
+      )}
     </div>
   )
 }

@@ -1,0 +1,80 @@
+const cardFiles = import.meta.glob('../../references/organs/*-card.md', {
+  query: '?raw',
+  import: 'default',
+  eager: true
+})
+
+const articleFiles = import.meta.glob('../../references/organs/*-article.md', {
+  query: '?raw',
+  import: 'default',
+  eager: true
+})
+
+// Dot positions use the 180 x 500 figure viewBox. Organs without a figures list appear on both figures.
+const organNames = [
+  { id: 'appendix', name: 'Appendix', image: 'appendix.png', spots: [[106, 232]] },
+  { id: 'bone', name: 'Bones', image: 'bone.svg', spots: [[90, 150]] },
+  { id: 'brain', name: 'Brain', image: 'brain.jpg', spots: [[90, 35]] },
+  { id: 'ears', name: 'Ears', image: 'ears.svg', spots: [[64, 40], [116, 40]] },
+  { id: 'eyes', name: 'Eyes', image: 'eyes.svg', spots: [[82, 37], [98, 37]] },
+  { id: 'feet', name: 'Feet', image: 'feet.png', spots: [[70, 440], [110, 440]] },
+  { id: 'hands', name: 'Hands', image: 'hands.png', spots: [[32, 258], [148, 258]] },
+  { id: 'heart', name: 'Heart', image: 'heart.jpg', spots: [[90, 116]], hub: 'heart' },
+  { id: 'intestines', name: 'Intestines', image: 'intestines.svg', spots: [[90, 205]] },
+  { id: 'kidneys', name: 'Kidneys', image: 'kidneys.jpg', spots: [[62, 210], [118, 210]], hub: 'kidneys' },
+  { id: 'liver', name: 'Liver', image: 'liver.jpg', spots: [[112, 170]] },
+  { id: 'lungs', name: 'Lungs', image: 'lungs.svg', spots: [[72, 125], [108, 125]] },
+  { id: 'mouth', name: 'Mouth', image: 'mouth.jpg', spots: [[90, 56]] },
+  { id: 'nose', name: 'Nose', image: 'nose.jpg', spots: [[90, 44]] },
+  { id: 'skin', name: 'Skin', image: 'skin.jpg', spots: [[146, 200]] },
+  { id: 'spinal-cord', name: 'Spinal cord', image: 'spinal-cord.jpg', spots: [[90, 100], [90, 190]] },
+  { id: 'stomach', name: 'Stomach', image: 'stomach.png', spots: [[75, 185]] },
+  { id: 'teeth', name: 'Teeth', image: 'teeth.jpg', spots: [[90, 50]] },
+  { id: 'throat', name: 'Throat', image: 'throat.jpg', spots: [[90, 74]] },
+  { id: 'breasts', name: 'Breasts', image: 'breasts.jpg', spots: [[66, 112], [114, 112]], figures: ['female'] },
+  { id: 'cervix', name: 'Cervix', image: 'cervix.jpg', spots: [[90, 248]], figures: ['female'] },
+  { id: 'fallopian-tubes', name: 'Fallopian tubes', image: 'fallopian-tubes.svg', spots: [[78, 206], [102, 206]], figures: ['female'] },
+  { id: 'ovaries', name: 'Ovaries', image: 'ovaries.jpg', spots: [[66, 220], [114, 220]], figures: ['female'] },
+  { id: 'uterus', name: 'Uterus', image: 'uterus.jpg', spots: [[90, 228]], figures: ['female'] },
+  { id: 'vagina', name: 'Vagina', image: 'vagina.png', spots: [[90, 262]], figures: ['female'] },
+  { id: 'vulva', name: 'Vulva', image: 'vulva.jpg', spots: [[90, 278]], figures: ['female'] }
+]
+
+// Credits from references/images/SOURCES2.txt. Shown under each image as the licence requires.
+const imageCredits = {
+  appendix: { source: 'Vermiform Appendix (PSF)', url: 'https://commons.wikimedia.org/wiki/File:Vermiform_Appendix_(PSF).png', licence: 'Public domain' },
+  bone: { source: 'Human skeleton, front view', url: 'https://commons.wikimedia.org/wiki/File:Human_skeleton_front_en.svg', licence: 'Public domain' },
+  brain: { source: 'Blausen Medical', url: 'https://commons.wikimedia.org/wiki/File:Blausen_0111_BrainLobes.png', licence: 'CC BY 3.0' },
+  ears: { source: 'Anatomy of the Human Ear', url: 'https://commons.wikimedia.org/wiki/File:Anatomy_of_the_Human_Ear.svg', licence: 'CC BY 2.5' },
+  eyes: { source: 'Schematic diagram of the human eye', url: 'https://commons.wikimedia.org/wiki/File:Schematic_diagram_of_the_human_eye.svg', licence: 'CC BY-SA 3.0' },
+  feet: { source: "Gray's Anatomy plate 290", url: 'https://commons.wikimedia.org/wiki/File:Gray290.png', licence: 'Public domain' },
+  hands: { source: 'Hand bones, numbered', url: 'https://commons.wikimedia.org/wiki/File:Hand_bones_numbered.png', licence: 'CC BY-SA 3.0' },
+  heart: { source: 'Diagram of the Human Heart', url: 'https://commons.wikimedia.org/wiki/File:Diagram_of_the_Human_Heart.jpg', licence: 'CC BY 4.0' },
+  intestines: { source: 'Digestive system diagram', url: 'https://commons.wikimedia.org/wiki/File:Digestive_system_diagram_en.svg', licence: 'Public domain' },
+  kidneys: { source: 'Blausen Medical', url: 'https://commons.wikimedia.org/wiki/File:Blausen_0592_KidneyAnatomy_01.png', licence: 'CC BY 3.0' },
+  liver: { source: 'Liver and gallbladder', url: 'https://commons.wikimedia.org/wiki/File:Illu_liver_gallbladder.jpg', licence: 'Public domain' },
+  lungs: { source: 'Respiratory system', url: 'https://commons.wikimedia.org/wiki/File:Respiratory_system_complete_en.svg', licence: 'Public domain' },
+  mouth: { source: 'Blausen Medical', url: 'https://commons.wikimedia.org/wiki/File:Blausen_0653_MouthAnatomy.png', licence: 'CC BY 3.0' },
+  nose: { source: 'Nose and nasal cavities', url: 'https://commons.wikimedia.org/wiki/File:Nose_and_nasal_cavities.png', licence: 'Public domain' },
+  skin: { source: 'NCI Visuals Online', url: 'https://commons.wikimedia.org/wiki/File:Anatomy_The_Skin_-_NCI_Visuals_Online.jpg', licence: 'Public domain' },
+  'spinal-cord': { source: 'Spinal cord sectional anatomy', url: 'https://commons.wikimedia.org/wiki/File:Spinal_Cord_Sectional_Anatomy.png', licence: 'CC BY-SA 4.0' },
+  stomach: { source: 'Anatomy of stomach, numbered', url: 'https://commons.wikimedia.org/wiki/File:Anatomy_of_stomach_numbered.png', licence: 'CC BY-SA 3.0' },
+  teeth: { source: 'Blausen Medical', url: 'https://commons.wikimedia.org/wiki/File:Blausen_0863_ToothAnatomy_02.png', licence: 'CC BY 3.0' },
+  throat: { source: 'Blausen Medical', url: 'https://commons.wikimedia.org/wiki/File:Blausen_0860_Tonsils%26Throat_Anatomy.png', licence: 'CC BY 3.0' },
+  breasts: { source: 'Breast anatomy scheme, Patrick J. Lynch', url: 'https://commons.wikimedia.org/wiki/File:Breast_anatomy_normal_scheme.png', licence: 'CC BY 3.0' },
+  cervix: { source: 'Illu cervix', url: 'https://commons.wikimedia.org/wiki/File:Illu_cervix.jpg', licence: 'Public domain' },
+  'fallopian-tubes': { source: 'Female reproductive system scheme', url: 'https://commons.wikimedia.org/wiki/File:Scheme_female_reproductive_system-en.svg', licence: 'Public domain' },
+  ovaries: { source: 'Illu ovary', url: 'https://commons.wikimedia.org/wiki/File:Illu_ovary.jpg', licence: 'Public domain' },
+  uterus: { source: 'Blausen Medical', url: 'https://commons.wikimedia.org/wiki/File:Blausen_0399_FemaleReproSystem_01.png', licence: 'CC BY 3.0' },
+  vagina: { source: 'Blausen Medical', url: 'https://commons.wikimedia.org/wiki/File:Blausen_0400_FemaleReproSystem_02b.png', licence: 'CC BY' },
+  vulva: { source: 'Female perineum', url: 'https://commons.wikimedia.org/wiki/File:Female_Perineum.png', licence: 'CC BY-SA 4.0' }
+}
+
+export const organs = organNames.map((organ) => ({
+  figures: ['male', 'female'],
+  ...organ,
+  card: cardFiles[`../../references/organs/${organ.id}-card.md`],
+  article: articleFiles[`../../references/organs/${organ.id}-article.md`],
+  imageUrl: `${import.meta.env.BASE_URL}organs/${organ.image}`,
+  credit: imageCredits[organ.id]
+}))
