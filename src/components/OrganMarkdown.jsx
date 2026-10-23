@@ -1,4 +1,5 @@
 import { Fragment } from 'react'
+import { ailmentPath, navigateTo } from '../lib/organRoute'
 
 const INLINE = /\*\*(.+?)\*\*|\*(.+?)\*|\[([^\]]+)\]\(([^)]*)\)/g
 
@@ -77,10 +78,45 @@ function parseBlocks(source) {
   return blocks
 }
 
-export default function OrganMarkdown({ source }) {
+// Renders a paragraph line. A "What can go wrong" line turns each item into a link when the item has an ailment page.
+function renderLine(line, organId, ailmentLinks) {
+  const whatCanGoWrong = line.match(/^\*\*What can go wrong:\*\*\s*(.*)$/)
+  if (!whatCanGoWrong || !ailmentLinks.length) return renderInline(line)
+
+  const items = whatCanGoWrong[1].split(' · ')
+  return (
+    <>
+      <strong>What can go wrong:</strong>{' '}
+      {items.map((item, i) => {
+        const link = ailmentLinks.find(({ prefix }) => item.toLowerCase().startsWith(prefix.toLowerCase()))
+        return (
+          <Fragment key={i}>
+            {i > 0 && ' · '}
+            {link ? (
+              <a
+                href={ailmentPath(organId, link.id)}
+                onClick={(e) => {
+                  e.preventDefault()
+                  navigateTo(ailmentPath(organId, link.id))
+                }}
+                className="text-blue-600 underline hover:text-blue-800"
+              >
+                {renderInline(item)}
+              </a>
+            ) : (
+              renderInline(item)
+            )}
+          </Fragment>
+        )
+      })}
+    </>
+  )
+}
+
+export default function OrganMarkdown({ source, organId, ailmentLinks = [] }) {
   const blocks = parseBlocks(source)
 
-  // The first heading in each file repeats the organ name, which the modal already shows
+  // The first heading in each file repeats the organ name, which the page already shows
   if (blocks[0]?.type === 'h') blocks.shift()
 
   return (
@@ -111,7 +147,7 @@ export default function OrganMarkdown({ source }) {
             {block.lines.map((line, j) => (
               <Fragment key={j}>
                 {j > 0 && <br />}
-                {renderInline(line)}
+                {renderLine(line, organId, ailmentLinks)}
               </Fragment>
             ))}
           </p>

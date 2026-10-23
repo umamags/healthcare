@@ -57,7 +57,8 @@ jobs:
             "rm -rf /home/fbmerf3ynq50/public_html/healthcare/* && mkdir -p /home/fbmerf3ynq50/public_html/healthcare"
 
           # Copy new files using SCP
-          scp -r -P ${{ secrets.SSH_PORT }} ./dist/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/fbmerf3ynq50/public_html/healthcare/
+          # ./dist/. (not ./dist/*) so the .htaccess rewrite rules are copied too
+          scp -r -P ${{ secrets.SSH_PORT }} ./dist/. ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/fbmerf3ynq50/public_html/healthcare/
 
       - name: Verify deployment
         run: |

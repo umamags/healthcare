@@ -1,15 +1,3 @@
-const cardFiles = import.meta.glob('../../references/organs/*-card.md', {
-  query: '?raw',
-  import: 'default',
-  eager: true
-})
-
-const articleFiles = import.meta.glob('../../references/organs/*-article.md', {
-  query: '?raw',
-  import: 'default',
-  eager: true
-})
-
 // Dot positions use the 180 x 500 figure viewBox. Organs without a figures list appear on both figures.
 const organNames = [
   { id: 'appendix', name: 'Appendix', image: 'appendix.png', spots: [[106, 232]] },
@@ -46,7 +34,7 @@ const organNames = [
   { id: 'testes', name: 'Testes', image: 'testes.jpg', spots: [[85, 286], [95, 286]], figures: ['male'] }
 ]
 
-// Credits from references/images/SOURCES2.txt. Shown under each image as the licence requires.
+// Credits from references/organs/images/SOURCES3.txt. Shown under each image as the licence requires.
 const imageCredits = {
   appendix: { source: 'Vermiform Appendix (PSF)', url: 'https://commons.wikimedia.org/wiki/File:Vermiform_Appendix_(PSF).png', licence: 'Public domain' },
   bone: { source: 'Human skeleton, front view', url: 'https://commons.wikimedia.org/wiki/File:Human_skeleton_front_en.svg', licence: 'Public domain' },
@@ -85,8 +73,6 @@ const imageCredits = {
 export const organs = organNames.map((organ) => ({
   figures: ['male', 'female'],
   ...organ,
-  card: cardFiles[`../../references/organs/${organ.id}-card.md`],
-  article: articleFiles[`../../references/organs/${organ.id}-article.md`],
   imageUrl: `${import.meta.env.BASE_URL}organs/${organ.image}`,
   credit: imageCredits[organ.id]
 }))

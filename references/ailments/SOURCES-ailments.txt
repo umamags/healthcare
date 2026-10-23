@@ -1,0 +1,49 @@
+Ailment images for ai-lab.in/healthcare — one image per ailment, expanded from the organ cards.
+All sourced from Wikimedia Commons under open licenses (public domain / CC0 / Creative Commons).
+Attribution: for CC-licensed images, credit the source as noted when publishing.
+
+LIVER
+fatty-liver.jpg — Ultrasound scan of a fatty liver, labeled
+  Source: https://commons.wikimedia.org/wiki/File:Ultrasound_of_upper_right_liver_lobe_showing_fatty_liver.jpg — CC BY-SA 4.0
+hepatitis.jpg — Jaundice (yellowing) of the eye — a hallmark sign of hepatitis
+  Source: https://commons.wikimedia.org/wiki/File:Jaundice_eye.jpg — Public domain
+alcohol-related-liver-disease.png — Progression of liver disease, stage diagram
+  Source: https://commons.wikimedia.org/wiki/File:Progression_of_liver_disease.png — CC BY 4.0
+cirrhosis.png — Liver cirrhosis, labeled diagram
+  Source: https://commons.wikimedia.org/wiki/File:Liver_Cirrhosis.png — CC BY-SA 4.0
+liver-cancer.jpg — CT scan of hepatocellular carcinoma (liver cancer)
+  Source: https://commons.wikimedia.org/wiki/File:Triphasic_CT_scan_of_hepatocellular_carcinoma.jpg — CC BY 4.0
+
+EYES
+refractive-errors.jpg — Forms of the eye: A normal, B short-sighted, C long-sighted (1911 plate; order per source page)
+  Source: https://commons.wikimedia.org/wiki/File:EB1911_Vision_-_Forms_of_eye_-_normal,_short_and_far-sighted.jpg — Public domain
+cataract.png — Cataract in a human eye, magnified view
+  Source: https://commons.wikimedia.org/wiki/File:Cataract_in_human_eye.png — CC BY-SA 3.0
+glaucoma.png — Normal vision vs vision with glaucoma, with the drainage/pressure mechanism
+  Source: https://commons.wikimedia.org/wiki/File:Depiction_of_vision_for_a_Glaucoma_patient.png — CC BY-SA 4.0
+macular-degeneration.jpg — Age-related macular degeneration: risk factors and progression infographic
+  Source: https://commons.wikimedia.org/wiki/File:Macular_degeneration.jpg — CC BY 4.0
+diabetic-retinopathy.png — Fundus (retina) photograph showing diabetic retinopathy
+  Source: https://commons.wikimedia.org/wiki/File:Fundus_-_diabetic_retinopathy.png — CC BY 4.0
+conjunctivitis.jpg — Eye with conjunctivitis (clinical photograph)
+  Source: https://commons.wikimedia.org/wiki/File:Conjunctivitis_eye_2026_23.jpg — CC BY-SA 4.0
+dry-eye.svg — The tear (lacrimal) system, lettered a–g — legend on the source page
+  Source: https://commons.wikimedia.org/wiki/File:Tear_system.svg — CC BY-SA 2.5
+
+LUNGS
+asthma.jpg — Asthma attack illustration: normal vs narrowed airway (NIH)
+  Source: https://commons.wikimedia.org/wiki/File:Asthma_attack-illustration_NIH.jpg — Public domain
+copd.jpg — COPD lung vs healthy lung, side by side (small image)
+  Source: https://commons.wikimedia.org/wiki/File:Copd_versus_healthy_lung.jpg — Public domain
+pneumonia.jpg — Chest X-ray of lobar pneumonia
+  Source: https://commons.wikimedia.org/wiki/File:X-ray_of_lobar_pneumonia.jpg — CC0
+tuberculosis.jpg — Chest X-ray of pulmonary tuberculosis
+  Source: https://commons.wikimedia.org/wiki/File:Tuberculosis-x-ray-1.jpg — Public domain
+bronchitis.png — Bronchitis: normal vs inflamed bronchial tube (Blausen Medical)
+  Source: https://commons.wikimedia.org/wiki/File:Bronchitis.png — CC BY-SA 4.0
+lung-cancer.png — CT scan of lung cancer
+  Source: https://commons.wikimedia.org/wiki/File:CT_scan_of_lung_cancer_with_cavitation.png — CC0
+
+Notes:
+- The COPD and asthma images are small (the best openly licensed options found); the rest are full-size.
+- The refractive-errors plate is lettered (A/B/C) rather than text-labeled; the mapping is in the entry above.
