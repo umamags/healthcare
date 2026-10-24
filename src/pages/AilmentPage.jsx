@@ -1,12 +1,26 @@
-import { useEffect } from 'react'
-import { getAilment } from '../data/ailments'
+import { useEffect, useState } from 'react'
+import { loadOrganAilments } from '../data/ailments'
 import { organs } from '../data/organs'
 import OrganMarkdown from '../components/OrganMarkdown'
 import { homePath, navigateTo, organPath } from '../lib/organRoute'
 
 export default function AilmentPage({ organId, ailmentId }) {
   const organ = organs.find((item) => item.id === organId)
-  const ailment = getAilment(organId, ailmentId)
+  const [ailment, setAilment] = useState(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    let active = true
+    setLoading(true)
+    loadOrganAilments(organId).then(({ ailments }) => {
+      if (!active) return
+      setAilment(ailments.find((item) => item.id === ailmentId) ?? null)
+      setLoading(false)
+    })
+    return () => {
+      active = false
+    }
+  }, [organId, ailmentId])
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -20,6 +34,10 @@ export default function AilmentPage({ organId, ailmentId }) {
       document.title = previousTitle
     }
   }, [ailment])
+
+  if (loading) {
+    return <main className="max-w-3xl mx-auto px-4 py-16 text-center text-gray-600">Loading…</main>
+  }
 
   if (!ailment || !organ) {
     return (

@@ -1,0 +1,165 @@
+Ailment images for ai-lab.in/healthcare — one image per ailment, expanded from the organ cards.
+All sourced from Wikimedia Commons under open licenses (public domain / CC0 / Creative Commons).
+Attribution: for CC-licensed images, credit the source as noted when publishing.
+
+LIVER
+fatty-liver.jpg — Ultrasound scan of a fatty liver, labeled
+  Source: https://commons.wikimedia.org/wiki/File:Ultrasound_of_upper_right_liver_lobe_showing_fatty_liver.jpg — CC BY-SA 4.0
+hepatitis.jpg — Jaundice (yellowing) of the eye — a hallmark sign of hepatitis
+  Source: https://commons.wikimedia.org/wiki/File:Jaundice_eye.jpg — Public domain
+alcohol-related-liver-disease.png — Progression of liver disease, stage diagram
+  Source: https://commons.wikimedia.org/wiki/File:Progression_of_liver_disease.png — CC BY 4.0
+cirrhosis.png — Liver cirrhosis, labeled diagram
+  Source: https://commons.wikimedia.org/wiki/File:Liver_Cirrhosis.png — CC BY-SA 4.0
+liver-cancer.jpg — CT scan of hepatocellular carcinoma (liver cancer)
+  Source: https://commons.wikimedia.org/wiki/File:Triphasic_CT_scan_of_hepatocellular_carcinoma.jpg — CC BY 4.0
+
+EYES
+refractive-errors.jpg — Forms of the eye: A normal, B short-sighted, C long-sighted (1911 plate; order per source page)
+  Source: https://commons.wikimedia.org/wiki/File:EB1911_Vision_-_Forms_of_eye_-_normal,_short_and_far-sighted.jpg — Public domain
+cataract.png — Cataract in a human eye, magnified view
+  Source: https://commons.wikimedia.org/wiki/File:Cataract_in_human_eye.png — CC BY-SA 3.0
+glaucoma.png — Normal vision vs vision with glaucoma, with the drainage/pressure mechanism
+  Source: https://commons.wikimedia.org/wiki/File:Depiction_of_vision_for_a_Glaucoma_patient.png — CC BY-SA 4.0
+macular-degeneration.jpg — Age-related macular degeneration: risk factors and progression infographic
+  Source: https://commons.wikimedia.org/wiki/File:Macular_degeneration.jpg — CC BY 4.0
+diabetic-retinopathy.png — Fundus (retina) photograph showing diabetic retinopathy
+  Source: https://commons.wikimedia.org/wiki/File:Fundus_-_diabetic_retinopathy.png — CC BY 4.0
+conjunctivitis.jpg — Eye with conjunctivitis (clinical photograph)
+  Source: https://commons.wikimedia.org/wiki/File:Conjunctivitis_eye_2026_23.jpg — CC BY-SA 4.0
+dry-eye.svg — The tear (lacrimal) system, lettered a–g — legend on the source page
+  Source: https://commons.wikimedia.org/wiki/File:Tear_system.svg — CC BY-SA 2.5
+
+LUNGS
+asthma.jpg — Asthma attack illustration: normal vs narrowed airway (NIH)
+  Source: https://commons.wikimedia.org/wiki/File:Asthma_attack-illustration_NIH.jpg — Public domain
+copd.jpg — COPD lung vs healthy lung, side by side (small image)
+  Source: https://commons.wikimedia.org/wiki/File:Copd_versus_healthy_lung.jpg — Public domain
+pneumonia.jpg — Chest X-ray of lobar pneumonia
+  Source: https://commons.wikimedia.org/wiki/File:X-ray_of_lobar_pneumonia.jpg — CC0
+tuberculosis.jpg — Chest X-ray of pulmonary tuberculosis
+  Source: https://commons.wikimedia.org/wiki/File:Tuberculosis-x-ray-1.jpg — Public domain
+bronchitis.png — Bronchitis: normal vs inflamed bronchial tube (Blausen Medical)
+  Source: https://commons.wikimedia.org/wiki/File:Bronchitis.png — CC BY-SA 4.0
+lung-cancer.png — CT scan of lung cancer
+  Source: https://commons.wikimedia.org/wiki/File:CT_scan_of_lung_cancer_with_cavitation.png — CC0
+
+HEART
+coronary-artery-disease.jpg — Plaque narrowing a coronary artery, with heart inset (3D medical illustration)
+  Source: https://commons.wikimedia.org/wiki/File:Coronary_Artery_Disease.jpg — CC BY-SA 4.0
+heart-attack.png — Heart attack: blocked coronary artery and damaged heart muscle (Blausen Medical)
+  Source: https://commons.wikimedia.org/wiki/File:Blausen_0463_HeartAttack.png — CC BY 3.0
+heart-failure.jpg — Normal heart vs enlarged (failing) heart, side by side
+  Source: https://commons.wikimedia.org/wiki/File:Right_side_heart_failure.jpg — CC BY-SA 4.0
+arrhythmias.jpg — ECG trace of atrial fibrillation (irregular rhythm)
+  Source: https://commons.wikimedia.org/wiki/File:ECG_Atrial_Fibrillation_98_bpm.jpg — CC BY-SA 4.0
+valve-disease.png — Mitral valve stenosis (Blausen Medical)
+  Source: https://commons.wikimedia.org/wiki/File:Blausen_0648_MitralValveStenosis.png — CC BY 3.0
+congenital-heart-defects.png — Ventricular septal defect ("hole in the heart"), labeled
+  Source: https://commons.wikimedia.org/wiki/File:Ventricular_Septal_Defect.png — CC BY-SA 4.0
+
+BRAIN
+stroke.jpg — The two stroke types: blocked artery vs bleeding in the brain
+  Source: https://commons.wikimedia.org/wiki/File:Types_of_Stroke.jpg — CC BY-SA 4.0
+dementia.jpg — Normal brain vs Alzheimer's brain, side by side
+  Source: https://commons.wikimedia.org/wiki/File:Alzheimer's_disease_brain_comparison.jpg — Public domain
+parkinsons.png — Parkinson's disease: the substantia nigra and dopamine pathways (Blausen Medical)
+  Source: https://commons.wikimedia.org/wiki/File:Blausen_0704_ParkinsonsDisease.png — CC BY 3.0
+epilepsy.png — EEG recording showing seizure (spike-wave) activity
+  Source: https://commons.wikimedia.org/wiki/File:EEG_Absence_seizure.png — CC BY-SA 4.0
+migraine.png — Migraine aura (scintillating scotoma) as sufferers depict it
+  Source: https://commons.wikimedia.org/wiki/File:Migraine-aura-aka-scintillating-scotoma-anecdoteal-depiction.png — CC0
+brain-tumours.jpg — MRI scan showing a brain tumour
+  Source: https://commons.wikimedia.org/wiki/File:Brain_Tumor_MRI.jpg — Public domain
+traumatic-brain-injury.jpg — Closed head injury: how a blow injures the brain inside the skull
+  Source: https://commons.wikimedia.org/wiki/File:Closed_Brain_Injury_Closed_Head_Injury.jpg — CC BY 4.0
+
+KIDNEYS
+chronic-kidney-disease.png — CKD stages G1–G5 by eGFR (table)
+  Source: https://commons.wikimedia.org/wiki/File:Stages-CKD.png — CC0
+kidney-stones.png — Kidney stones in the kidney and ureter (Blausen Medical)
+  Source: https://commons.wikimedia.org/wiki/File:Blausen_0595_KidneyStones.png — CC BY 3.0
+kidney-infection.png — Depiction of a man with a kidney infection (flank pain)
+  Source: https://commons.wikimedia.org/wiki/File:Depiction_of_a_man_suffering_from_a_Kidney_Infection.png — CC BY-SA 4.0
+acute-kidney-injury.svg — Haemodialysis machine diagram, labeled (English version) — dialysis is the support used when kidneys fail suddenly or permanently
+  Source: https://commons.wikimedia.org/wiki/File:Hemodialysis-en.svg — CC BY-SA 3.0
+
+EARS
+hearing-loss.jpg — A real audiogram (hearing test chart) showing hearing loss
+  Source: https://commons.wikimedia.org/wiki/File:An_audiogram_with_mixed_hearing_loss_for_the_left_ear.jpg — CC BY 3.0
+otitis-media.jpg — Eardrum with middle-ear fluid (serous otitis media), otoscope view
+  Source: https://commons.wikimedia.org/wiki/File:Adult_Serous_Otitis_Media.jpg — CC BY-SA 4.0
+swimmers-ear.jpg — Inflamed outer ear and ear canal (otitis externa), clinical photo
+  Source: https://commons.wikimedia.org/wiki/File:Otitis_externa.jpg — CC BY 3.0 DE
+tinnitus.svg — Anatomy of the human ear, labeled — the cochlea (inner ear) is where tinnitus originates
+  Source: https://commons.wikimedia.org/wiki/File:Anatomy_of_the_Human_Ear.svg — CC BY 2.5
+vertigo.jpg — The otolith organs of the vestibular (balance) system (small image)
+  Source: https://commons.wikimedia.org/wiki/File:Otolith_organ_of_vestibular_system.jpg — Public domain
+earwax-blockage.jpg — A removed earwax plug
+  Source: https://commons.wikimedia.org/wiki/File:OhrenSchmalzBrocken.jpg — Attribution (CC BY)
+perforated-eardrum.png — Depiction of a man with a ruptured/perforated eardrum
+  Source: https://commons.wikimedia.org/wiki/File:Depiction_of_a_man_with_a_ruptured_or_perforated_eardrum.png — CC BY-SA 4.0
+
+NOSE
+allergic-rhinitis.png — Depiction of a person suffering from allergic rhinitis
+  Source: https://commons.wikimedia.org/wiki/File:Depiction_of_a_person_suffering_from_Allergic_Rhinitis.png — CC BY-SA 4.0
+sinusitis.png — Healthy vs inflamed sinuses (CDC diagram)
+  Source: https://commons.wikimedia.org/wiki/File:Sinusitis_cdc.png — Public domain
+deviated-septum.jpg — MRI showing a deviated nasal septum
+  Source: https://commons.wikimedia.org/wiki/File:Deviated_nasal_septum_MRI.jpg — CC BY-SA 4.0
+nosebleeds.jpg — A nosebleed (epistaxis), clinical photo — graphic (blood); swap if a milder image is preferred
+  Source: https://commons.wikimedia.org/wiki/File:Epistaxis1.jpg — CC BY-SA 3.0
+nasal-polyps.png — Depiction of nasal polyps inside the nose
+  Source: https://commons.wikimedia.org/wiki/File:Depiction_of_nasal_polyps.png — CC BY-SA 4.0
+loss-of-smell.svg — The olfactory (smell) system, labeled diagram
+  Source: https://commons.wikimedia.org/wiki/File:Olfactory_system.svg — CC BY-SA 2.5
+
+THROAT
+sore-throat.jpg — Inflamed throat (pharyngitis), clinical photo
+  Source: https://commons.wikimedia.org/wiki/File:Pharyngitis,_COVID-19.jpg — CC0
+tonsillitis.jpg — Swollen, inflamed tonsils (3D medical illustration)
+  Source: https://commons.wikimedia.org/wiki/File:SAG_Acute-Tonsillitis_191010_01_(1).jpg — CC BY-SA 4.0
+strep-throat.jpg — Streptococcal pharyngitis (CDC photo)
+  Source: https://commons.wikimedia.org/wiki/File:Streptococcal_pharyngitis.jpg — Public domain
+laryngitis.png — Normal vs inflamed larynx and vocal cords (Blausen Medical)
+  Source: https://commons.wikimedia.org/wiki/File:Laryngitis.png — CC BY-SA 4.0
+throat-reflux.jpg — Gastro-oesophageal reflux: stomach acid rising into the oesophagus (Blausen Medical)
+  Source: https://commons.wikimedia.org/wiki/File:GastroEsophageal_Reflux_Disease_(GERD).jpg — CC BY-SA 4.0
+dysphagia.png — The pharynx and swallowing pathway, numbered 1–4 — legend on the source page
+  Source: https://commons.wikimedia.org/wiki/File:Pharynx_(PSF).png — Public domain
+hoarseness-neck-lump.svg — The vocal tract and larynx, numbered — legend on the source page
+  Source: https://commons.wikimedia.org/wiki/File:VocalTract_withNumbers.svg — CC BY 3.0
+
+MOUTH
+mouth-ulcers.jpg — A canker sore (aphthous ulcer)
+  Source: https://commons.wikimedia.org/wiki/File:Canker_sore.JPG — Public domain
+cold-sores.jpg — Cold sore (herpes labialis) on the lip (CDC photo)
+  Source: https://commons.wikimedia.org/wiki/File:Herpes(PHIL_1573_lores).jpg — Public domain
+oral-thrush.jpg — Oral thrush (candidiasis) on the tongue (CDC photo)
+  Source: https://commons.wikimedia.org/wiki/File:Oral_thrush_Aphthae_Candida_albicans._PHIL_1217_lores.jpg — Public domain
+dry-mouth.svg — The salivary glands, labeled
+  Source: https://commons.wikimedia.org/wiki/File:Salivary_glands_labeled.svg — CC BY-SA 4.0
+bad-breath.png — Depiction of a person with halitosis (bad breath)
+  Source: https://commons.wikimedia.org/wiki/File:Depiction_of_a_person_who_has_Halitosis_(or_bad_breath).png — CC BY-SA 4.0
+oral-cancer.png — Cancer of the tongue, clinical photo — graphic (advanced lesion)
+  Source: https://commons.wikimedia.org/wiki/File:PLoS_oral_cancer.png — CC BY 2.5
+
+TEETH
+tooth-decay.jpg — A decayed tooth (dental caries) — small image
+  Source: https://commons.wikimedia.org/wiki/File:Dental_caries.jpg — CC BY-SA 3.0
+gum-disease.png — Normal tooth vs periodontitis, labeled, with patient depiction
+  Source: https://commons.wikimedia.org/wiki/File:Depiction_of_a_Periodontitis_patient.png — CC BY-SA 4.0
+tooth-abscess.jpg — A gum abscess (parulis / "gum boil") below a broken tooth
+  Source: https://commons.wikimedia.org/wiki/File:Abces_parulique.jpg — CC BY-SA 3.0
+cracked-tooth.png — A cracked tooth in the mouth and after removal, split through the root
+  Source: https://commons.wikimedia.org/wiki/File:Cracked_tooth.png — CC BY-SA 3.0
+impacted-wisdom-teeth.jpg — Dental X-ray of a horizontally impacted wisdom tooth
+  Source: https://commons.wikimedia.org/wiki/File:Impacted_Wisdom_Tooth_aka_Lower_Left_Third_Molar_38_RVG_IOPA_Xray.jpg — CC BY-SA 4.0
+tooth-loss.jpg — An implant-supported bridge on a model jaw — one replacement option for lost teeth
+  Source: https://commons.wikimedia.org/wiki/File:Implant_retained_bridge_model.jpg — CC BY-SA 3.0
+non-healing-mouth-sores.jpg — Leukoplakia: a white patch that does not wipe or heal away — a warning sign to get checked
+  Source: https://commons.wikimedia.org/wiki/File:Leukoplakia.jpg — Public domain
+
+Notes:
+- The COPD and asthma images are small (the best openly licensed options found); the rest are full-size.
+- The refractive-errors plate is lettered (A/B/C) rather than text-labeled; the mapping is in the entry above.

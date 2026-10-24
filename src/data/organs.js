@@ -73,6 +73,7 @@ const imageCredits = {
 export const organs = organNames.map((organ) => ({
   figures: ['male', 'female'],
   ...organ,
-  imageUrl: `${import.meta.env.BASE_URL}organs/${organ.image}`,
+  // Rasters are served as smaller WebP copies with the same name (see tools/optimize-images.mjs)
+  imageUrl: `${import.meta.env.BASE_URL}organs/${organ.image.replace(/\.(png|jpe?g)$/i, '.webp')}`,
   credit: imageCredits[organ.id]
 }))

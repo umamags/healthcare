@@ -1,33 +1,41 @@
 const BASE = import.meta.env.BASE_URL
 
-const ailmentFiles = import.meta.glob('../../references/ailments/*-ailments.md', {
+// Loaders, not the text itself, so each organ's ailments are fetched only when its page opens
+const ailmentLoaders = import.meta.glob('../../references/ailments/*-ailments.md', {
   query: '?raw',
-  import: 'default',
-  eager: true
+  import: 'default'
 })
 
-const sourceFiles = import.meta.glob('../../references/ailments/SOURCES-*.txt', {
+const sourceLoaders = import.meta.glob('../../references/ailments/SOURCES-*.txt', {
   query: '?raw',
-  import: 'default',
-  eager: true
+  import: 'default'
 })
+
+let creditsPromise = null
+const organCache = new Map()
 
 // Each entry is "<image file>.<ext> — <description>" followed by a "Source: <url> — <licence>" line.
 // Later source files override earlier ones.
-const imageCredits = {}
-for (const text of Object.values(sourceFiles)) {
-  const lines = text.split('\n')
-  lines.forEach((line, i) => {
-    const entry = line.match(/^(\S+\.\w+) — (.+)$/)
-    const source = lines[i + 1]?.match(/^\s+Source: (\S+) — (.+)$/)
-    if (entry && source) {
-      imageCredits[entry[1]] = { description: entry[2], url: source[1], licence: source[2] }
+function loadCredits() {
+  creditsPromise ??= Promise.all(Object.values(sourceLoaders).map((load) => load())).then((texts) => {
+    const credits = {}
+    for (const text of texts) {
+      const lines = text.split('\n')
+      lines.forEach((line, i) => {
+        const entry = line.match(/^(\S+\.\w+) — (.+)$/)
+        const source = lines[i + 1]?.match(/^\s+Source: (\S+) — (.+)$/)
+        if (entry && source) {
+          credits[entry[1]] = { description: entry[2], url: source[1], licence: source[2] }
+        }
+      })
     }
+    return credits
   })
+  return creditsPromise
 }
 
 // Reads the "## Ailment" sections of an ailments file. Each "**Label:** text" line starts a field.
-function parseAilments(source, organId) {
+function parseAilments(source, organId, credits) {
   return source.split(/^## /m).slice(1).map((section) => {
     const [heading, ...lines] = section.split('\n')
     const fields = []
@@ -52,20 +60,28 @@ function parseAilments(source, organId) {
       title: heading.trim(),
       summary: valueOf('Summary'),
       image,
-      imageUrl: `${BASE}ailments/${image}`,
-      credit: imageCredits[image],
+      // Rasters are served as smaller WebP copies with the same name (see tools/optimize-images.mjs)
+      imageUrl: `${BASE}ailments/${image.replace(/\.(png|jpe?g)$/i, '.webp')}`,
+      credit: credits[image],
       sections: fields.filter((field) => field.label !== 'Summary' && field.label !== 'Image')
     }
   })
 }
 
-export const ailmentsByOrgan = Object.fromEntries(
-  Object.entries(ailmentFiles).map(([path, source]) => {
-    const organId = path.match(/\/([^/]+)-ailments\.md$/)[1]
-    return [organId, parseAilments(source, organId)]
-  })
-)
-
-export function getAilment(organId, ailmentId) {
-  return ailmentsByOrgan[organId]?.find((ailment) => ailment.id === ailmentId)
+// Loads one organ's ailments and its intro text (for example, a safety warning above the list).
+// Results are cached, so opening the same organ again doesn't reload the file.
+export function loadOrganAilments(organId) {
+  if (!organCache.has(organId)) {
+    const load = ailmentLoaders[`../../references/ailments/${organId}-ailments.md`]
+    organCache.set(
+      organId,
+      load
+        ? Promise.all([load(), loadCredits()]).then(([source, credits]) => ({
+            intro: source.split(/^## /m)[0].split('\n').slice(1).join('\n').trim(),
+            ailments: parseAilments(source, organId, credits)
+          }))
+        : Promise.resolve({ intro: '', ailments: [] })
+    )
+  }
+  return organCache.get(organId)
 }

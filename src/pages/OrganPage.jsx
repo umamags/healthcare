@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { organs } from '../data/organs'
 import { cardAilmentLinks } from '../data/cardAilmentLinks'
 import { getOrganText } from '../data/organText'
+import { loadOrganAilments } from '../data/ailments'
 import OrganMarkdown from '../components/OrganMarkdown'
 
 export default function OrganPage({ organId, onBack, onHubClick }) {
@@ -15,6 +16,18 @@ export default function OrganPage({ organId, onBack, onHubClick }) {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [organId, view])
+
+  const [intro, setIntro] = useState('')
+
+  useEffect(() => {
+    let active = true
+    loadOrganAilments(organId).then((data) => {
+      if (active) setIntro(data.intro)
+    })
+    return () => {
+      active = false
+    }
+  }, [organId])
 
   useEffect(() => {
     if (!organ) return
@@ -64,6 +77,12 @@ export default function OrganPage({ organId, onBack, onHubClick }) {
             Image: <a href={organ.credit.url} target="_blank" rel="noopener noreferrer" className="underline">{organ.credit.source}</a>
             {' '}via Wikimedia Commons · {organ.credit.licence} · resized
           </p>
+
+          {view === 'card' && intro && (
+            <div className="mb-6 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm">
+              <OrganMarkdown source={intro} organId={organ.id} />
+            </div>
+          )}
 
           <OrganMarkdown
             source={view === 'card' ? text.card : text.article}
